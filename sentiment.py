@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 import random
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
+import datetime
 from sklearn.metrics import mutual_info_score
 import pickle
 from sklearn.naive_bayes import MultinomialNB
@@ -64,7 +65,7 @@ def extract_and_split(neg_path, pos_path):
 
 
 
-def sent(src,dest,pivot_num,pivot_min_st,dim,c_parm,modelo,extraction):
+def sent(src,dest,pivot_num,pivot_min_st,dim,c_parm,modelo,extraction, time):
     pivotsCounts = []
     #get representation matrix
 
@@ -164,7 +165,8 @@ def sent(src,dest,pivot_num,pivot_min_st,dim,c_parm,modelo,extraction):
     if not os.path.exists(os.path.dirname(filename)):
             os.makedirs(os.path.dirname(filename))
 
-    sentence = "dim = "+str(dim)+"  on dev : rep = "+str(log_dev_rep)+" , non = " + str(log_dev_source)+" all = "+str(log_dev_all)+ ", on target: rep = "+ str(lgR) + " , non = "+ str(lgs) + " all = "+str(lg)+ " c_parm = "+str(c_parm)
+    total_time = (datetime.datetime.now() - time).total_seconds()
+    sentence = "dim = "+str(dim)+"  on dev : rep = "+str(log_dev_rep)+" , non = " + str(log_dev_source)+" all = "+str(log_dev_all)+ ", on target: rep = "+ str(lgR) + " , non = "+ str(lgs) + " all = "+str(lg)+ " time = "+str(total_time)
 
     print(sentence)
     with open(filename, "a") as myfile:

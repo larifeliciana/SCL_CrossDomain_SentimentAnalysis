@@ -134,7 +134,8 @@ def preproc(pivot_num,pivot_min_st,src,dest):
         i+=1
 
     print("**********************************************************************************************")
-
+    print(src)
+    preproc(dest)
     source_valid = int(len(source)/5)
     target_valod = int(len(target)/5)
     c=0
