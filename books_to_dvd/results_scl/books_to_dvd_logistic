@@ -1,0 +1,1 @@
+dim = 50  on dev : rep = 0.7225 , non = 0.78 all = 0.7925, on target: rep = 0.7195 , non = 0.7755 all = 0.7795 c_parm = 0.1
