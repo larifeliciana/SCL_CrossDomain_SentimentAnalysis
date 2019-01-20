@@ -202,14 +202,14 @@ def feature_extraction_methods(tipo, min_df):
 
     pre = []
     if tipo is 'tfidf':
-        pre = feature_extraction.text.TfidfVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b',  stop_words=stopwords, min_df=min_df)
+        pre = feature_extraction.text.TfidfVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b',min_df=min_df)
     elif tipo is 'idf':
-        pre = feature_extraction.text.TfidfVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', stop_words=stopwords, binary=True, min_df=min_df)
+        pre = feature_extraction.text.TfidfVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', binary=True, min_df=min_df)
     elif tipo is 'counter':
-        pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', stop_words=stopwords, min_df=min_df)
+        pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b',  min_df=min_df)
     elif tipo is 'binario':
-        pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', stop_words=stopwords, min_df=min_df)
+        pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b',  min_df=min_df)
     elif tipo is 'delta':
-        pre = delta.DeltaTfidfVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', stop_words=stopwords, min_df=min_df)
+        pre = delta.DeltaTfidfVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', min_df=min_df)
 
     return pre
