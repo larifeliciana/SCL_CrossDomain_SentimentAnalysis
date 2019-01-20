@@ -16,7 +16,7 @@ if __name__ == '__main__':
             for i in lista:
                 src = i[0]
                 dst = i[1]
-                print(datetime.datetime.now())
+                time = datetime.datetime.now()
                 print("loading....")
                 tr.train(domain[src],domain[dst],500,10)
                 print("Sent....")
