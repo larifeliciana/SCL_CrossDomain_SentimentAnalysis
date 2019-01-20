@@ -208,7 +208,7 @@ def feature_extraction_methods(tipo, min_df):
     elif tipo is 'counter':
         pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b',  min_df=min_df)
     elif tipo is 'binario':
-        pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b',  min_df=min_df)
+        pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), binary=True, token_pattern=r'\b\w+\b',  min_df=min_df)
     elif tipo is 'delta':
         pre = delta.DeltaTfidfVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', min_df=min_df)
 
