@@ -161,7 +161,7 @@ def sent(src,dest,pivot_num,pivot_min_st,dim,c_parm,modelo,extraction, time):
     log_dev_rep = logregR.score(XforREP_dev,test_target)
     lgR = logregR.score(rep_for_dest, dest_test_target)
 
-    filename = "results/"+src+"_to_"+dest+"/"+"results_scl/"+src+"_to_"+dest+"_"+modelo
+    filename = "results/"+src+"_to_"+dest+"/"+extraction+"/"+src+"_to_"+dest+"_"+modelo
     if not os.path.exists(os.path.dirname(filename)):
             os.makedirs(os.path.dirname(filename))
 
