@@ -20,4 +20,4 @@ if __name__ == '__main__':
                 print("loading....")
                 tr.train(domain[src],domain[dst],500,10)
                 print("Sent....")
-                sentiment.sent(domain[src],domain[dst],500,10,50,0.1, j,n)
+                sentiment.sent(domain[src],domain[dst],500,10,50,0.1, j,n,time)
