@@ -11,7 +11,7 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import feature_extraction
-import delta
+
 import os
 
 
@@ -209,7 +209,5 @@ def feature_extraction_methods(tipo, min_df):
         pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b',  min_df=min_df)
     elif tipo is 'binario':
         pre = feature_extraction.text.CountVectorizer(ngram_range=(1, 2), binary=True, token_pattern=r'\b\w+\b',  min_df=min_df)
-    elif tipo is 'delta':
-        pre = delta.DeltaTfidfVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', min_df=min_df)
-
+    
     return pre
