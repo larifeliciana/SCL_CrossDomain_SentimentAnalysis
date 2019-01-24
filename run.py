@@ -5,7 +5,24 @@ from itertools import combinations
 import sentiment
 if __name__ == '__main__':
     domain = ["books", "kitchen", "dvd", "electronics"]
-    algorithms = ['logistic','svm','random', 'tree']
+    x = 0
+    algorithms = None
+    while(algorithms == None):
+
+            x = input("Select the classifier\n1-Logistic Regression\n2-Random Forest\n3-Decision Tree\n4-SVM\n")
+            print(x)
+            if x == '1':
+                algorithms = ['logistic']
+            elif x == '2':
+                algorithms = ['random']
+            elif x == '3':
+                algorithms = ['tree']
+            elif x == '4':
+                algorithms = ['svm']
+            else:
+                print("\n" * 130)
+                print(x + " IS AN INVALID INPUT, TRY AGAIN!")
+                
     extraction = ['tfidf', 'idf','counter','binario']
     k = 500
 
